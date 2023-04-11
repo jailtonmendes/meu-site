@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
 
+  teste() {
+    console.log('testando...')
+  }
+
 }
