@@ -3,8 +3,11 @@
   <section class="perfil">
     <div class="labelPerfil"><p>PERFIL</div>
     <div class="areaTexto">
-      <h4>Sou um desenvolvedor front-end com habilidades em HTML, CSS e JavaScript, <br> bem como nos frameworks Angular, Ionic e Flutter. Também tenho experiência em PHP, Node.js e banco de dados MySQL para criar aplicações web e móveis. Além disso, possuo conhecimento em ferramentas de design, como Illustrator, Photoshop e Figma, que me ajudam a criar interfaces de usuário atraentes e intuitivas.
-        Tenho habilidades em consumir APIs e serviços, o que me permite integrar aplicativos a outros sistemas de forma eficiente. Meu objetivo é criar experiências de usuário agradáveis e intuitivas, sempre mantendo-me atualizado nas últimas tecnologias e tendências do mercado. "</h4>
+      <h4>Sou um desenvolvedor front-end com habilidades em HTML, CSS e JavaScript, bem como nos frameworks Angular, Ionic e Flutter. Também tenho experiência em PHP, Node.js e banco de dados MySQL para criar aplicações web e móveis. Além disso, possuo conhecimento em ferramentas de design, como Illustrator, Photoshop e Figma, que me ajudam a criar interfaces de usuário atraentes e intuitivas. Tenho habilidades em consumir APIs e serviços, o que me permite integrar aplicativos a outros sistemas de forma eficiente. Meu objetivo é criar experiências de usuário agradáveis e intuitivas, sempre mantendo-me atualizado nas últimas tecnologias e tendências do mercado. <br><br>
+
+        Sou apaixonado por desafios e estou sempre procurando maneiras de me desafiar a criar soluções inovadoras e eficazes para problemas complexos de desenvolvimento. Acredito que enfrentar desafios é a melhor maneira de crescer profissionalmente e estou sempre disposto a aprender algo novo para melhorar minhas habilidades de desenvolvimento.
+
+        Com minha experiência e paixão pelo que faço, tenho certeza de que posso criar soluções de software eficazes e intuitivas para qualquer projeto que me for dado. Estou ansioso para continuar aprendendo e crescendo em minha carreira de desenvolvimento de software.</h4>
     </div>
     <div class="divider">
       <hr class="linha-divisao">
@@ -13,44 +16,89 @@
   </section>
 
   <section class="projetos">
+
     <div class="labelPerfilRight">
       <p>PROJETOS
     </div>
 
     <div class="areaProjetos">
-      <div class="projeto">
-        <img src="../assets/backFotoPerfil.svg" alt="">
+      <div class="projeto" (click)="abrirModal(1, 'WebSite Frutas', 'Aqui vai a descrição do projeto...')">
+        <img src="../assets/projeto01.jpg" alt="">
         <div class="tituloProjeto">
-          Site Institucional
+          <p>WebSite Frutas</p>
+        </div>
+      </div>
+
+      <div class="projeto"(click)="abrirModal(2, 'WebSite Agency', 'Aqui vai a descrição do projeto...')" >
+        <img src="../assets/projeto02.png" alt="">
+        <div class="tituloProjeto">
+          <p>WebSite Agency</p>
+        </div>
+      </div>
+
+      <div class="projeto" (click)="abrirModal(3, 'App tarefas', 'Ionic, Angular e TypeScript')">
+        <img src="../assets/projeto03.png" alt="">
+        <div class="tituloProjeto">
+          <p>App tarefas</p>
         </div>
       </div>
 
       <div class="projeto">
-        <img src="../assets/backFotoPerfil.svg" alt="">
+        <img src="../assets/projeto04.png" alt="" (click)="abrirModal(4, 'WebSite Agency', 'Aqui vai a descrição do projeto...')">
         <div class="tituloProjeto">
-          Site Institucional
-        </div>
-      </div>
-
-      <div class="projeto">
-        <img src="../assets/backFotoPerfil.svg" alt="">
-        <div class="tituloProjeto">
-          Site Institucional
-        </div>
-      </div>
-
-      <div class="projeto">
-        <img src="../assets/backFotoPerfil.svg" alt="">
-        <div class="tituloProjeto">
-          Site Institucional
+          <p>App de turismo</p>
         </div>
       </div>
     </div>
 
-    <div class="button">
-      <button>Ver Mais</button>
+    <div class="verMais">
+      <button (click)="projetos()">Ver mais</button>
     </div>
+
 
   </section>
 
 </div>
+
+
+<p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: '50vw'}" [maximizable]="true">
+  <p class="descricaoProjeto">
+      {{ descricaoProjeto }}
+  </p>
+
+  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card1">
+    <p-chip label="HTML"></p-chip>
+    <p-chip label="CSS"></p-chip>
+    <p-chip label="JavaScript"></p-chip>
+  </div>
+
+  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card2">
+    <p-chip label="HTML"></p-chip>
+    <p-chip label="SASS"></p-chip>
+  </div>
+
+  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card3">
+    <p-chip label="Ionic"></p-chip>
+    <p-chip label="Angular"></p-chip>
+    <p-chip label="TypeScript"></p-chip>
+  </div>
+
+  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card4">
+    <p-chip label="Ionic"></p-chip>
+    <p-chip label="Angular"></p-chip>
+    <p-chip label="TypeScript"></p-chip>
+  </div>
+
+<div class="demonstracao">
+  <a [href]="link" target="_blank">Demonstração</a>
+</div>
+
+
+</p-dialog>
+
+
+<p-dialog [header]="titulo" [(visible)]="leiaMais" [style]="{width: '50vw'}" >
+  <p class="descricaoProjeto">
+    "Você encontrou uma página em construção! Não se preocupe, é só o meu jeito de dizer que ainda estou trabalhando duro para deixá-la incrível. Fique à vontade para voltar mais tarde e conferir o resultado final!"
+  </p>
+  </p-dialog>

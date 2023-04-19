@@ -2,31 +2,48 @@
 <div class="card">
   <section class="areaFotoPerfil">
     <div class="foto">
-      <img src="../assets/backFotoPerfil.svg" alt="Background da foto de perfil">
+      <!-- <img src="../assets/backFotoPerfil.svg" alt="Background da foto de perfil"> -->
+
+        <ng-lottie width="450px" height="450px" [options]="option"></ng-lottie>
 
     </div>
-    <div class="nome">
+    <!-- <div class="nome">
       <p>JAILTON MENDES</p>
-    </div>
+    </div> -->
   </section>
 
   <section class="areaMenu">
-    <div class="opcoesMenu">
-      <div class="itensMenu">
-        <button class="itemMenu" (click)="teste()">Projetos</button>
-        <button class="itemMenu">Blog</button>
+
+    <div class="menu">
+      <app-menu-component></app-menu-component>
+      <!-- <div class="itensMenu">
+        <button class="itemMenu" (click)="projetos()">Projetos</button>
+        <button class="itemMenu" (click)="blog()">Blog</button>
         <button class="itemMenu">Contato</button>
-      </div>
+      </div> -->
     </div>
     <div class="profissao">
       <p>DESENVOLVEDOR</p>
       <p>FRONT-END</p>
+      <span class="nameTitulo">JAILTON MENDES</span>
+      <div class="social">
+
+
+        <a href="https://www.linkedin.com/in/jailton-mendes/" target="_blank">
+          <i class="pi pi-linkedin"></i>
+        </a>
+
+        <a href="https://github.com/jailtonmendes" target="_blank">
+          <i class="pi pi-github"></i>
+        </a>
+
+        <a href="https://jailtonmendes.dev.br/curriculo/Jailton_Mendes_da_Silva.pdf" target="_blank">
+          <i class="pi pi-file-pdf"></i>
+        </a>
+
+
+      </div>
     </div>
-    <div class="links">
-        <!-- <p-button styleClass="p-button-rounded" >GitHub</p-button>
-        <p-button styleClass="p-button-rounded" >Linkdin</p-button> -->
-        <p-button icon="pi pi-linkedin" styleClass="p-button-rounded p-button-info"></p-button>
-<p-button icon="pi pi-github" styleClass="p-button-rounded p-button-secondary"></p-button>
-    </div>
+
   </section>
 </div>

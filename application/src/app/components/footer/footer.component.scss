@@ -1,5 +1,78 @@
 .areaFooter {
   width: 100%;
-  height: 200px;
-  background-color: rgb(0, 0, 0);
+  // height: 20%;
+  max-height: 100%;
+  // background-color: rgb(0, 0, 0);
+  border-top: solid 0.5px #798CA3;
+}
+
+footer {
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  gap: 20px;
+  display: flex;
+  align-items: center;
+  padding: 50px 0;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #798CA3;
+  color: #FFFFFF;
+
+}
+
+footer>.infor {
+  width: 400px;
+  height: 80%;
+  // background-color: #798CA3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 0.8px;
+}
+
+footer>.infor>.sub-infor {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  letter-spacing: 0.8px;
+  text-align: center;
+}
+
+.item-sub-infor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // flex-direction: column;
+  gap: 5px;
+}
+
+.item-sub-infor>span {
+  background-color: black;
+  padding: 5px;
+  border-radius: 2px 8px;
+}
+
+.frase {
+  text-align: center;
+}
+
+.divider {
+  width: 100%;
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .divider {
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 }

@@ -7,6 +7,8 @@ import { HomeRoutingModule } from "./home-routing.module";
 import { MenuModule } from '../menu/menu.module';
 import { FooterModule } from '../footer/footer.module';
 import { BodyModule } from '../body/body.module';
+import { ProjetosModule } from '../projetos/projetos.module';
+import { BlogModule } from '../blog/blog.module';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { BodyModule } from '../body/body.module';
     SharedPrimeNgModule,
     MenuModule,
     FooterModule,
-    BodyModule
+    BodyModule,
+    ProjetosModule,
+    BlogModule
   ]
 })
 export class HomeModule {}
