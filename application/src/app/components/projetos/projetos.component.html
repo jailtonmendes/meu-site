@@ -15,13 +15,24 @@
 <div class="filtro">
   <div class="itensFiltro">
     <button class="itemFiltro">Front-end</button>
-    <button class="itemFiltro">Design</button>
+    <!-- <button class="itemFiltro">Design</button> -->
     <button class="itemFiltro">Backend</button>
   </div>
 </div>
 
 <section class="areaCard">
-  <div class="card" (click)="showDialog()"></div>
+  <!-- <div class="projeto" (click)="abrirModal(3, 'App tarefas', 'Ionic, Angular e TypeScript')">
+        <img src="../assets/projeto03.png" alt="">
+        <div class="tituloProjeto">
+          <p>App tarefas</p>
+        </div>
+      </div> -->
+  <div class="card projeto" (click)="showDialog()">
+    <img src="../assets/appTarefasIonic.png" alt="">
+    <div class="tituloProjeto">
+      <p>App tarefas</p>
+    </div>
+  </div>
   <div class="card" (click)="showDialog()"></div>
   <div class="card" (click)="showDialog()"></div>
   <div class="card" (click)="showDialog()"></div>
@@ -36,7 +47,7 @@
 
 <!-- <div class="card flex justify-content-center"> -->
   <!-- <p-button (click)="showDialog()" icon="pi pi-external-link" label="Show"></p-button> -->
-  <p-dialog header="Header" [(visible)]="visible" [style]="{width: '50vw'}" [maximizable]="true">
+  <p-dialog header="Header" [(visible)]="visible" [style]="{width: modalWidth }" [maximizable]="true">
       <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
           consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

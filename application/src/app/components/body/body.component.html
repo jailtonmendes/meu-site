@@ -32,10 +32,10 @@
         </div>
       </div>
 
-      <div class="projeto" (click)="abrirModal(3, 'App tarefas', 'Ionic, Angular e TypeScript')">
+      <div class="projeto" (click)="abrirModal(3, 'App Delivery', 'Flutter, Dart')">
         <img src="../assets/projeto03.png" alt="">
         <div class="tituloProjeto">
-          <p>App tarefas</p>
+          <p>App delivery</p>
         </div>
       </div>
 
@@ -57,7 +57,7 @@
 </div>
 
 
-<p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: '50vw'}" [maximizable]="true">
+<p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: modalWidth}" [maximizable]="true">
   <p class="descricaoProjeto">
       {{ descricaoProjeto }}
   </p>
@@ -74,9 +74,9 @@
   </div>
 
   <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card3">
-    <p-chip label="Ionic"></p-chip>
-    <p-chip label="Angular"></p-chip>
-    <p-chip label="TypeScript"></p-chip>
+    <p-chip label="Flutter"></p-chip>
+    <p-chip label="Dart"></p-chip>
+    <!-- <p-chip label="TypeScript"></p-chip> -->
   </div>
 
   <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card4">
@@ -86,14 +86,14 @@
   </div>
 
 <div class="demonstracao">
-  <a [href]="link" target="_blank">Demonstração</a>
+  <a [href]="link" target="_blank">{{nomeBotao}}</a>
 </div>
 
 
 </p-dialog>
 
 
-<p-dialog [header]="titulo" [(visible)]="leiaMais" [style]="{width: '50vw'}" >
+<p-dialog [header]="titulo" [(visible)]="leiaMais" [style]="{width: modalWidth}" >
   <p class="descricaoProjeto">
     "Você encontrou uma página em construção! Não se preocupe, é só o meu jeito de dizer que ainda estou trabalhando duro para deixá-la incrível. Fique à vontade para voltar mais tarde e conferir o resultado final!"
   </p>
