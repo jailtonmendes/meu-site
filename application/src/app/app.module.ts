@@ -10,10 +10,9 @@ import { SharedPrimeNgModule } from './shared/shared-primeNg/shared-primeNg.modu
 
 
 
-
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -9,13 +9,19 @@ import { LottieModule } from 'ngx-lottie';
 import player from 'lottie-web';
 import { ChipModule } from 'primeng/chip';
 import { CommonModule } from "@angular/common";
+import { ChipsModule } from 'primeng/chips';
+import { FormsModule } from "@angular/forms";
+import { ModalComponent } from "../modal/modal.component";
 
 export function playerFactory() {
   return player;
 }
 @NgModule({
-  declarations: [],
+  declarations: [
+    ModalComponent
+  ],
   imports: [
+    FormsModule,
     SplitterModule,
     CardModule,
     ButtonModule,
@@ -24,12 +30,13 @@ export function playerFactory() {
     ConfirmDialogModule,
     LottieModule.forRoot({ player: playerFactory }),
     ChipModule,
-    CommonModule
-
-
-
+    CommonModule,
+    ChipsModule,
+    
+  
   ],
   exports: [
+    FormsModule,
     SplitterModule,
     CardModule,
     ButtonModule,
@@ -38,8 +45,10 @@ export function playerFactory() {
     ConfirmDialogModule,
     LottieModule,
     ChipModule,
-    CommonModule
-
+    CommonModule,
+    ChipsModule,
+    ModalComponent
+    
   ]
 })
 export class SharedPrimeNgModule {}

@@ -10,6 +10,7 @@ import { BodyModule } from '../body/body.module';
 import { ProjetosModule } from '../projetos/projetos.module';
 import { BlogModule } from '../blog/blog.module';
 
+
 @NgModule({
   declarations: [
     HomeComponent
@@ -22,7 +23,8 @@ import { BlogModule } from '../blog/blog.module';
     FooterModule,
     BodyModule,
     ProjetosModule,
-    BlogModule
+    BlogModule,
+
   ]
 })
 export class HomeModule {}

@@ -18,14 +18,25 @@
     </div>
 
     <div class="areaProjetos">
+
+      <div *ngFor="let projeto of listaProjetosHome" class="projeto" (click)="abrirModal()">
+        <img src="{{projeto.img}}" alt="">
+        <div class="tituloProjeto">
+          <p>{{ projeto.titulo}}</p>
+        </div>
+      </div>
+
+      </div>
+
+    <!-- <div class="areaProjetos">
       <div class="projeto" (click)="abrirModal(1, 'WebSite Frutas', 'Aqui vai a descrição do projeto...')">
         <img src="../assets/projeto01.jpg" alt="">
         <div class="tituloProjeto">
           <p>WebSite Frutas</p>
         </div>
-      </div>
+      </div> -->
 
-      <div class="projeto"(click)="abrirModal(2, 'WebSite Agency', 'Aqui vai a descrição do projeto...')" >
+      <!-- <div class="projeto"(click)="abrirModal(2, 'WebSite Agency', 'Aqui vai a descrição do projeto...')" >
         <img src="../assets/projeto02.png" alt="">
         <div class="tituloProjeto">
           <p>WebSite Agency</p>
@@ -45,7 +56,7 @@
           <p>App de turismo</p>
         </div>
       </div>
-    </div>
+    </div> -->
 
     <div class="verMais">
       <button (click)="projetos()">Ver mais</button>
@@ -56,8 +67,9 @@
 
 </div>
 
+<app-modal [header]="titulo" [visible]="visible" [style]="modalWidth"></app-modal>
 
-<p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: modalWidth}" [maximizable]="true">
+<!-- <p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: modalWidth}" [maximizable]="true">
   <p class="descricaoProjeto">
       {{ descricaoProjeto }}
   </p>
@@ -68,6 +80,7 @@
     <p-chip label="JavaScript"></p-chip>
   </div>
 
+
   <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card2">
     <p-chip label="HTML"></p-chip>
     <p-chip label="SASS"></p-chip>
@@ -76,7 +89,6 @@
   <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card3">
     <p-chip label="Flutter"></p-chip>
     <p-chip label="Dart"></p-chip>
-    <!-- <p-chip label="TypeScript"></p-chip> -->
   </div>
 
   <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card4">
@@ -90,7 +102,7 @@
 </div>
 
 
-</p-dialog>
+</p-dialog> -->
 
 
 <p-dialog [header]="titulo" [(visible)]="leiaMais" [style]="{width: modalWidth}" >
