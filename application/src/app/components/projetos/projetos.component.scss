@@ -59,7 +59,7 @@
 .itensFiltro {
   width: 100%;
   // background-color: aquamarine;
-  padding: 20px;
+  padding: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -129,6 +129,7 @@
   flex-direction: column;
   align-items: center;
   cursor: pointer;
+  margin-bottom: 25px;
 }
 
 .projeto::after {
@@ -164,4 +165,5 @@
   height: 100%;
   object-fit: cover;
   border-radius: 45px 10px 0px 0px;
+
 }

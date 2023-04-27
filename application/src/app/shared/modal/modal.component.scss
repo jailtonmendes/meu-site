@@ -1,0 +1,30 @@
+.descricaoProjeto {
+    margin-bottom: 20px;
+  }
+  
+  p-chip {
+    display: inline-flex;
+    align-items: center;
+    margin-right: 5px !important;
+  }
+  
+  .demonstracao {
+    width: 100%;
+    // background-color: pink;
+    text-align: center;
+    padding: 10px;
+    margin-top: 50px;
+  }
+  
+  .demonstracao a{
+    border: none;
+    border-radius: 0px 24px;
+    background-color: #798CA3;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+  
+  }

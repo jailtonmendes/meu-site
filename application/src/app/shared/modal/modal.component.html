@@ -1,9 +1,10 @@
-<p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: modalWidth}" [maximizable]="true">
+
+<p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: modalWidth}" [maximizable]="true" (onHide)="fecharModal()">
     <p class="descricaoProjeto">
         {{ descricaoProjeto }}
     </p>
   
-    <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="idCard">
+    <div class="card flex align-items-center gap-2 flex-wrap">
       <p-chip *ngFor="let tag of tags" [label]="tag"></p-chip>
     </div>
   
@@ -11,6 +12,6 @@
   <div class="demonstracao">
     <a [href]="link" target="_blank">{{nomeBotao}}</a>
   </div>
-  
+
   
   </p-dialog>

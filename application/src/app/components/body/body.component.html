@@ -3,7 +3,7 @@
   <section class="perfil">
     <div class="labelPerfil"><p>PERFIL</div>
     <div class="areaTexto">
-      <h4>Sou um desenvolvedor front-end com habilidades em HTML, CSS, JavaScript e frameworks como Angular, Ionic e Flutter, bem como em PHP, Node.js e banco de dados MySQL para aplicações web e móveis. Também possuo habilidades em design de interfaces de usuário e integração de APIs e serviços. Com minha paixão por desafios e inovação, estou sempre buscando novas maneiras de aprimorar minhas habilidades e posso criar soluções de software eficazes e intuitivas para qualquer projeto. Estou ansioso para continuar aprendendo e crescendo em minha carreira de desenvolvimento de software.</h4>
+      <h4>Sou um desenvolvedor front-end com habilidades em HTML, CSS, JavaScript e frameworks como Angular, Ionic e Flutter, bem como em PHP, Node.js e banco de dados para aplicações web e móveis. Também possuo habilidades em design de interfaces de usuário e integração de APIs e serviços. Com minha paixão por desafios e inovação, estou sempre buscando novas maneiras de aprimorar minhas habilidades e posso criar soluções de software eficazes e intuitivas para qualquer projeto. Estou ansioso para continuar aprendendo e crescendo em minha carreira de desenvolvimento de software.</h4>
     </div>
     <div class="divider">
       <hr class="linha-divisao">
@@ -16,93 +16,33 @@
     <div class="labelPerfilRight">
       <p>PROJETOS
     </div>
-
+    <!-- Cards Projeto -->
     <div class="areaProjetos">
-
-      <div *ngFor="let projeto of listaProjetosHome" class="projeto" (click)="abrirModal()">
+      <div *ngFor="let projeto of listaProjetosHome" class="projeto" (click)="abrirModal(projeto)">
         <img src="{{projeto.img}}" alt="">
         <div class="tituloProjeto">
           <p>{{ projeto.titulo}}</p>
         </div>
       </div>
-
-      </div>
-
-    <!-- <div class="areaProjetos">
-      <div class="projeto" (click)="abrirModal(1, 'WebSite Frutas', 'Aqui vai a descrição do projeto...')">
-        <img src="../assets/projeto01.jpg" alt="">
-        <div class="tituloProjeto">
-          <p>WebSite Frutas</p>
-        </div>
-      </div> -->
-
-      <!-- <div class="projeto"(click)="abrirModal(2, 'WebSite Agency', 'Aqui vai a descrição do projeto...')" >
-        <img src="../assets/projeto02.png" alt="">
-        <div class="tituloProjeto">
-          <p>WebSite Agency</p>
-        </div>
-      </div>
-
-      <div class="projeto" (click)="abrirModal(3, 'App Delivery', 'Flutter, Dart')">
-        <img src="../assets/projeto03.png" alt="">
-        <div class="tituloProjeto">
-          <p>App delivery</p>
-        </div>
-      </div>
-
-      <div class="projeto">
-        <img src="../assets/projeto04.png" alt="" (click)="abrirModal(4, 'WebSite Agency', 'Aqui vai a descrição do projeto...')">
-        <div class="tituloProjeto">
-          <p>App de turismo</p>
-        </div>
-      </div>
-    </div> -->
-
+    </div>
     <div class="verMais">
       <button (click)="projetos()">Ver mais</button>
     </div>
-
-
   </section>
 
 </div>
 
-<app-modal [header]="titulo" [visible]="visible" [style]="modalWidth"></app-modal>
-
-<!-- <p-dialog [header]="titulo" [(visible)]="visible" [style]="{width: modalWidth}" [maximizable]="true">
-  <p class="descricaoProjeto">
-      {{ descricaoProjeto }}
-  </p>
-
-  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card1">
-    <p-chip label="HTML"></p-chip>
-    <p-chip label="CSS"></p-chip>
-    <p-chip label="JavaScript"></p-chip>
-  </div>
-
-
-  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card2">
-    <p-chip label="HTML"></p-chip>
-    <p-chip label="SASS"></p-chip>
-  </div>
-
-  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card3">
-    <p-chip label="Flutter"></p-chip>
-    <p-chip label="Dart"></p-chip>
-  </div>
-
-  <div class="card flex align-items-center gap-2 flex-wrap" *ngIf="card4">
-    <p-chip label="Ionic"></p-chip>
-    <p-chip label="Angular"></p-chip>
-    <p-chip label="TypeScript"></p-chip>
-  </div>
-
-<div class="demonstracao">
-  <a [href]="link" target="_blank">{{nomeBotao}}</a>
-</div>
-
-
-</p-dialog> -->
+<!--Popup | Modal -->
+<app-modal
+  [visible]="visible"
+  [modalWidth]="modalWidth"
+  [titulo]="titulo"
+  [descricaoProjeto]="descricaoProjeto"
+  [idCard]="idCard"
+  [tags]="tags"
+  [link]="link"
+  [nomeBotao]="nomeBotao"
+></app-modal>
 
 
 <p-dialog [header]="titulo" [(visible)]="leiaMais" [style]="{width: modalWidth}" >

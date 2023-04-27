@@ -14,11 +14,18 @@ export class ModalComponent {
   @Input() descricaoProjeto!: string;
   @Input() link!: string;
   @Input() nomeBotao!: string;
-  @Input() idCard!: boolean;
+  @Input() idCard!: number;
   @Input() modalWidth!: string;
-  @Input() tags!: [];
+  @Input() tags!: string[];
 
   constructor() {
-    console.log('titulo', this.titulo)
+    // console.log('titulo', this.titulo)
+    // this.titulo = 'TITULOO'
+  }
+
+  fecharModal() {
+    // Emitir evento de fechamento do modal
+    console.log('fechei!')
+    console.log('tags: ', this.tags)
   }
 }

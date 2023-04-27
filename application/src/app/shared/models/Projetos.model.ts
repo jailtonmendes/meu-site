@@ -6,4 +6,5 @@ export interface ProjetosModel {
     img: string;
     link: string,
     tags: string[],
+    nomeBotao: string
 }

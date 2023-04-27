@@ -15,12 +15,9 @@ export class BodyComponent {
   titulo!: string;
   descricaoProjeto!: string;
   link!: string;
-  card1!: boolean;
-  card2!: boolean;
-  card3!: boolean;
-  card4!: boolean;
+  idCard!: number;
   nomeBotao!: string;
-  values!: string[];
+  tags!: string[];
   listaProjetosHome = new Array<ProjetosModel>();
 
   leiaMais!: boolean;
@@ -55,118 +52,62 @@ export class BodyComponent {
   }
 
   projetos() {
-    this.leiaMais = true;
-    // this.router.navigate(['/projetos']);
+    // this.leiaMais = true;
+    this.router.navigate(['/projetos']);
   }
 
-  abrirModal() {
-    this.visible = true;
-    this.titulo = 'AAAAAA'
+  abrirModal(projeto: ProjetosModel) {
+    console.log('projeto: ', projeto)
+    this.visible = !this.visible;
+
+    this.titulo = projeto.titulo
+    this.descricaoProjeto = projeto.descricao
+    this.nomeBotao = projeto.nomeBotao
+    this.tags = projeto.tags
   }
+
+
 
   listaProjetosPrincipais() {
     this.listaProjetosHome = [
       {
         id: 1,
         titulo: 'WebSite Frutas',
-        descricao: 'Descrição...',
+        descricao: 'Este projeto é um website desenvolvido com HTML, CSS e JavaScript, com o objetivo de apresentar informações relevantes de maneira clara e acessível. A interface foi criada para oferecer uma experiência de usuário intuitiva, facilitando a navegação e a busca por informações',
         img: '../assets/projeto01.jpg',
         link: 'Link.com.br',
+        nomeBotao: 'Demonstração',
         tags: ['HTML', 'CSS', 'JavaScript']
       },
       {
         id: 1,
         titulo: 'WebSite Agency',
-        descricao: 'Descrição...',
+        descricao: 'Este projeto é um layout desenvolvido utilizando HTML e SASS, com o objetivo de criar uma interface atraente e funcional. A linguagem SASS permite uma escrita mais organizada e modular do CSS, resultando em um código mais limpo e fácil de manter.',
         img: '../assets/projeto02.png',
         link: 'Link.com.br',
-        tags: ['HTML', 'CSS', 'JavaScript']
+        nomeBotao: 'Demonstração',
+        tags: ['HTML', 'SASS']
       },
       {
         id: 1,
-        titulo: 'App delivery<',
-        descricao: 'Descrição...',
+        titulo: 'App delivery',
+        descricao: 'Este projeto foi desenvolvido durante o DartWeek, um evento realizado pela Academia do Flutter. Utilizamos a arquitetura MVC e o padrão Repository, juntamente com as tecnologias Provider e Bloc.',
         img: '../assets/projeto03.png',
         link: 'Link.com.br',
-        tags: ['HTML', 'CSS', 'JavaScript']
+        nomeBotao: 'Demonstração',
+        tags: ['FLUTTER', 'DART']
       },
       {
         id: 1,
         titulo: 'App de turismo',
-        descricao: 'Descrição...',
+        descricao: 'Este é um aplicativo de turismo que desenvolvi como projeto de estudo, utilizando as tecnologias Ionic, Angular e TypeScript',
         img: '../assets/projeto04.png',
         link: 'Link.com.br',
-        tags: ['HTML', 'CSS', 'JavaScript']
+        nomeBotao: 'Demonstração',
+        tags: ['Ionic', 'Angular', 'TypeScript']
       }
     ]
   }
 
-  // abrirModal(id: number, titulo: string, descricao: string) {
-  //   if(id == 1) {
-  //     descricao = 'Este projeto é um website desenvolvido com HTML, CSS e JavaScript, com o objetivo de apresentar informações relevantes de maneira clara e acessível. A interface foi criada para oferecer uma experiência de usuário intuitiva, facilitando a navegação e a busca por informações.'
-  //     this.visible = true;
-  //     this.titulo = titulo;
-  //     this.descricaoProjeto = descricao
-  //     this.link = 'http://jailtonmendes.dev.br/files-portfolio/projetos/web-site-frutas/'
-  //     this.card1 = true;
-  //     this.card2 = false
-  //     this.card3 = false
-  //     this.card4 = false
-  //     this.nomeBotao = 'Demonstração'
-  //   }
-  //   if(id == 2) {
-  //     descricao = 'Este projeto é um layout desenvolvido utilizando HTML e SASS, com o objetivo de criar uma interface atraente e funcional. A linguagem SASS permite uma escrita mais organizada e modular do CSS, resultando em um código mais limpo e fácil de manter.'
-  //     this.visible = true;
-  //     this.titulo = titulo;
-  //     this.descricaoProjeto = descricao
-  //     this.link = 'http://jailtonmendes.dev.br/files-portfolio/projetos/agency/'
-  //     this.card1 = false
-  //     this.card2 = true
-  //     this.card3 = false
-  //     this.card4 = false
-  //     this.nomeBotao = 'Demonstração'
-  //   }
-
-  //   if(id == 3) {
-  //     descricao = "Este projeto foi desenvolvido durante o DartWeek, um evento realizado pela Academia do Flutter. Utilizamos a arquitetura MVC e o padrão Repository, juntamente com as tecnologias Provider e Bloc."
-  //     this.visible = true;
-  //     this.titulo = titulo;
-  //     this.descricaoProjeto = descricao
-  //     this.link = 'https://github.com/jailtonmendes/dart-week-vakinha-burguer'
-  //     this.card1 = false
-  //     this.card2 = false
-  //     this.card3 = true
-  //     this.card4 = false
-  //     this.nomeBotao = 'Ver código'
-  //   }
-
-  //   // if(id == 3) {
-  //   //   descricao = 'O projeto "Lista de Tarefas" foi desenvolvido utilizando as tecnologias Ionic, Angular e TypeScript. O objetivo principal do projeto é permitir que o usuário crie, gerencie e acompanhe suas tarefas diárias de forma simples e eficiente.'
-  //   //   this.visible = true;
-  //   //   this.titulo = titulo;
-  //   //   this.descricaoProjeto = descricao
-  //   //   this.link = 'http://jailtonmendes.dev.br/appTarefa'
-  //   //   this.card1 = false
-  //   //   this.card2 = false
-  //   //   this.card3 = true
-  //   //   this.card4 = false
-  //   // }
-
-  //   if(id == 4) {
-  //     descricao = 'Este é um aplicativo de turismo que desenvolvi como projeto de estudo, utilizando as tecnologias Ionic, Angular e TypeScript'
-  //     this.visible = true;
-  //     this.titulo = titulo;
-  //     this.descricaoProjeto = descricao
-  //     this.link = 'https://jailtonmendes.dev.br/files-portfolio/projetos/app-turismo-ionic/'
-  //     this.card1 = false
-  //     this.card2 = false
-  //     this.card3 = false
-  //     this.card4 = true
-  //     this.nomeBotao = 'Demonstração'
-  //   }
-
-
-
-  // }
 
 }
