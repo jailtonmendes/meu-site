@@ -1,1 +1,124 @@
-<p>blog works!</p>
+<div class="areaBlog">
+    <div class="menu">
+      <button class="voltar">
+        <i class="pi pi-arrow-left" style="font-size: 2rem"></i>
+      </button>
+    
+      <app-menu-component></app-menu-component>
+    </div>
+    
+    <div class="titulo">
+      <span>Blog Tech</span>
+    </div>
+
+    <div class="areaPostagens">
+      <section class="conteudoBlog">
+        <!-- <article class="bannerBlog">
+
+         <div class="card">
+            <p-galleria [autoPlay]="true" [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '100%'}" [numVisible]="5">
+                <ng-template pTemplate="item" let-item>
+                    <img [src]="item.itemImageSrc" style="width: 100%; height: 400px;" />
+                </ng-template>
+                <ng-template pTemplate="thumbnail" let-item>
+                    <div class="grid grid-nogutter justify-content-center">
+                        <img [src]="item.thumbnailImageSrc" />
+                    </div>
+                </ng-template>
+            </p-galleria>
+          </div>
+
+        </article> -->
+        <div class="pesquisarPost">
+          <p>Pesquisar</p>
+          <input class="inputPesquisar" type="text" placeholder="Pesquisar postagens">
+        </div>
+        <article class="posts">
+
+          
+
+          <div class="cardPost">
+            <div class="post">
+              <img src="../assets/Angular_ciclo_de_vida.png" alt="">
+            </div>
+            <h1>Angular LifeCycle</h1>
+              <span>Conheça os ciclos de vida do angular...</span>
+              <div class="acoes">
+                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
+                <i class="pi pi-share-alt" ></i>
+              </div>
+          </div>
+
+          <div class="cardPost">
+            <div class="post">
+              <img src="../assets/Angular_ciclo_de_vida.png" alt="">
+            </div>
+            <h1>Angular LifeCycle</h1>
+              <span>Conheça os ciclos de vida do angular...</span>
+              <div class="acoes">
+                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
+                <i class="pi pi-share-alt" ></i>
+              </div>
+          </div>
+
+          <div class="cardPost">
+            <div class="post">
+              <img src="../assets/ionic.png" alt="">
+            </div>
+            <h1>Ionic Templates</h1>
+              <span>Conhecendo os templates pré-criados no ionic...</span>
+              <div class="acoes">
+                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
+                <i class="pi pi-share-alt" ></i>
+              </div>
+          </div>
+
+          <div class="cardPost">
+            <div class="post">
+              <img src="../assets/ionic.png" alt="">
+            </div>
+            <h1>Ionic Templates</h1>
+              <span>Conhecendo os templates pré-criados no ionic...</span>
+              <div class="acoes">
+                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
+                <i class="pi pi-share-alt" ></i>
+              </div>
+          </div>
+
+          <div class="cardPost">
+            <div class="post">
+              <img src="../assets/ionic.png" alt="">
+            </div>
+            <h1>Ionic Templates</h1>
+              <span>Conhecendo os templates pré-criados no ionic...</span>
+              <div class="acoes">
+                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
+                <i class="pi pi-share-alt" ></i>
+              </div>
+          </div>
+
+          <div class="cardPost">
+            <div class="post">
+              <img src="../assets/ionic.png" alt="">
+            </div>
+            <h1>Ionic Templates</h1>
+              <span>Conhecendo os templates pré-criados no ionic...</span>
+              <div class="acoes">
+                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
+                <i class="pi pi-share-alt" ></i>
+              </div>
+          </div>
+
+          
+          
+
+        </article>
+      </section>
+
+      <section class="pesquisaPostagens">
+        <div class="postsRecentes">
+      
+        </div>
+      </section>
+    </div>
+</div> 

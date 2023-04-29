@@ -23,4 +23,7 @@ export class MenuComponentComponent {
     console.log('projetos...')
   }
 
+  contato() {
+    
+  }
 }

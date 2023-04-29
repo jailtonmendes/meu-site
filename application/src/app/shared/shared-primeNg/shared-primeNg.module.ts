@@ -12,13 +12,14 @@ import { CommonModule } from "@angular/common";
 import { ChipsModule } from 'primeng/chips';
 import { FormsModule } from "@angular/forms";
 import { ModalComponent } from "../modal/modal.component";
+import { GalleriaModule } from 'primeng/galleria';
 
 export function playerFactory() {
   return player;
 }
 @NgModule({
   declarations: [
-    ModalComponent
+    ModalComponent,
   ],
   imports: [
     FormsModule,
@@ -32,7 +33,7 @@ export function playerFactory() {
     ChipModule,
     CommonModule,
     ChipsModule,
-    
+    GalleriaModule,
   
   ],
   exports: [
@@ -47,7 +48,8 @@ export function playerFactory() {
     ChipModule,
     CommonModule,
     ChipsModule,
-    ModalComponent
+    ModalComponent,
+    GalleriaModule
     
   ]
 })
