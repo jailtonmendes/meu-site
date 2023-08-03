@@ -14,6 +14,7 @@ import { FormsModule } from "@angular/forms";
 import { ModalComponent } from "../modal/modal.component";
 import { GalleriaModule } from 'primeng/galleria';
 
+
 export function playerFactory() {
   return player;
 }
@@ -34,7 +35,8 @@ export function playerFactory() {
     CommonModule,
     ChipsModule,
     GalleriaModule,
-  
+
+
   ],
   exports: [
     FormsModule,
@@ -49,8 +51,8 @@ export function playerFactory() {
     CommonModule,
     ChipsModule,
     ModalComponent,
-    GalleriaModule
-    
+    GalleriaModule,
+
   ]
 })
 export class SharedPrimeNgModule {}

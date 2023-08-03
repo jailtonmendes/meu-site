@@ -20,12 +20,12 @@ export class MenuComponent {
 
   projetos() {
     this.router.navigate(['/projetos']);
-    console.log('projetos...')
   }
 
   blog() {
+    // alert('Estou trablhando nessa seção... logo logo estará pronta!')
     this.router.navigate(['/blog']);
-    console.log('projetos...')
+
   }
 
   teste() {

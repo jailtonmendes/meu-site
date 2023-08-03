@@ -15,15 +15,15 @@ export class MenuComponentComponent {
 
   projetos() {
     this.router.navigate(['/projetos']);
-    console.log('projetos...')
   }
 
   blog() {
     this.router.navigate(['/blog']);
-    console.log('projetos...')
+    // alert('Estou trablhando nessa seção... logo logo estará pronta!')
   }
 
   contato() {
-    
+
   }
+
 }

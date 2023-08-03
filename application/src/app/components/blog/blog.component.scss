@@ -11,16 +11,20 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-  
+
   }
 
   .voltar {
+    display: flex;
+    align-items: center;
+    gap: 15px;
     // width: 100%;
     text-align: center;
     padding: 10px;
     border: none;
     background: none;
     cursor: pointer;
+
     // margin-bottom: 7%
   }
 
@@ -34,14 +38,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  
+
     background: #798ca3;
     color: #FFFFFF;
   }
-  
+
   .titulo span {
     font-size: 1.4rem;
-  
+
   }
 
 
@@ -71,12 +75,24 @@
     // background-color: chocolate;
   }
 
-  .conteudoBlog {
+  .conteudoBlog, .conteudoSelecionado {
     width: 70%;
     height: 300px;
     // background-color: blueviolet;
     height: 100%;
   }
+
+  .conteudoSelecionado {
+    margin-top: 40px;
+    // background-color: blueviolet;
+
+  }
+
+  .transition {
+    transition-duration: 0.5s;
+    transition-property: opacity;
+  }
+
 
   .posts {
     width: 100%;
@@ -90,12 +106,30 @@
     justify-content: center;
   }
 
+
   .cardPost {
     width: 180px;
   }
 
   .cardPost, h1 {
     margin-bottom: 10px;
+  }
+
+  .card {
+
+    .inputCard {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      margin-top: 25px;
+      margin-bottom: 10px
+    }
+
+    input {
+      width: 100%;
+      padding: 7px;
+    }
+
   }
 
   .post {
@@ -117,14 +151,25 @@
   }
 
   .acoes {
-    margin-top: 10px;
+
+    margin-top: 15px;
     display: flex;
+    align-items: center;
     justify-content: end;
     gap: 10px;
+
+    button {
+      padding: 5px;
+      border-radius: 12px;
+      border: solid 0.5px #798ca3;
+      cursor: pointer;
+    }
+
   }
 
   .acoes .pi {
     cursor: pointer;
+    font-size: 25px;
   }
 
   .p-galleria-content {
@@ -141,21 +186,23 @@
     // background-color: blueviolet;
   }
 
-  .postsRecentes {
-    width: 95%;
-    height: 500px;
-    margin: 0 auto;
-    margin-top: 40px;
-    background-color: chocolate;
-  }
-
-  .pesquisarPost {
+  .areaPesquisarPost {
     display: flex;
     align-items: center;
-    margin-top: 20px;
-    gap: 5px;
-    
+    justify-content: space-between;
+
+    .pesquisarPost {
+      display: flex;
+      align-items: center;
+      // justify-content: space-between;
+      margin-top: 20px;
+      gap: 5px;
+
+    }
+
   }
+
+
 
   .inputPesquisar {
     padding: 10px 20px;
@@ -168,5 +215,77 @@
 
   .inputPesquisar:focus {
     width: 50%;
+  }
+
+
+  //DESTAQUES
+  .postsRecentes {
+    width: 95%;
+    max-height: 600px;
+    margin: 0 auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 10px;
+    // background-color: chocolate;
+    border: solid #798ca3 0.1px;
+    border-radius: 40px 2px ;
+  }
+
+  .postsRecentes > .destaques {
+    width: 100%;
+    // background-color: #798ca3;
+  }
+
+  .postsRecentes > .destaques > h1{
+    text-align: center;
+    padding: 10px;
+    // background-color: #226407;
+  }
+
+  .postsRecentes > .destaques > article{
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    background-color: #FFFFFF;
+    margin: 5px 10px;
+    padding: 5px;
+    max-height: 200px;
+    overflow: hidden;
+
+  }
+
+  .postsRecentes > .destaques > article > p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+  }
+
+  .postsRecentes > .destaques > article > img{
+    width: 100px;
+    max-width: 100%;
+
+  }
+
+  .postSelecionado > h1 {
+    font-size: 2rem;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .imgPostSelecionado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .imgPostSelecionado > img {
+    width: 200px;
+  }
+
+  .descricaoPostSelecionado {
+    margin-top: 30px;
   }
 

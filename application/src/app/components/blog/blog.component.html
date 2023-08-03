@@ -1,19 +1,21 @@
 <div class="areaBlog">
-    <div class="menu">
-      <button class="voltar">
-        <i class="pi pi-arrow-left" style="font-size: 2rem"></i>
-      </button>
-    
-      <app-menu-component></app-menu-component>
-    </div>
-    
-    <div class="titulo">
-      <span>Blog Tech</span>
-    </div>
+  <div class="menu">
+    <button class="voltar">
+      <i class="pi pi-arrow-left"
+        style="font-size: 2rem"></i>
+    </button>
 
-    <div class="areaPostagens">
-      <section class="conteudoBlog">
-        <!-- <article class="bannerBlog">
+    <app-menu-component></app-menu-component>
+  </div>
+
+  <div class="titulo">
+    <span>Blog Tech</span>
+  </div>
+
+  <div class="areaPostagens">
+    <section class="conteudoBlog"
+      *ngIf="!postagemSelecionada">
+      <!-- <article class="bannerBlog">
 
          <div class="card">
             <p-galleria [autoPlay]="true" [value]="images" [responsiveOptions]="responsiveOptions" [containerStyle]="{ 'max-width': '100%'}" [numVisible]="5">
@@ -29,96 +31,132 @@
           </div>
 
         </article> -->
+
+      <div class="areaPesquisarPost">
+
         <div class="pesquisarPost">
           <p>Pesquisar</p>
-          <input class="inputPesquisar" type="text" placeholder="Pesquisar postagens">
+          <input class="inputPesquisar"
+            type="text"
+            placeholder="Pesquisar postagens">
         </div>
-        <article class="posts">
 
-          
-
-          <div class="cardPost">
-            <div class="post">
-              <img src="../assets/Angular_ciclo_de_vida.png" alt="">
-            </div>
-            <h1>Angular LifeCycle</h1>
-              <span>Conheça os ciclos de vida do angular...</span>
-              <div class="acoes">
-                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
-                <i class="pi pi-share-alt" ></i>
-              </div>
-          </div>
-
-          <div class="cardPost">
-            <div class="post">
-              <img src="../assets/Angular_ciclo_de_vida.png" alt="">
-            </div>
-            <h1>Angular LifeCycle</h1>
-              <span>Conheça os ciclos de vida do angular...</span>
-              <div class="acoes">
-                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
-                <i class="pi pi-share-alt" ></i>
-              </div>
-          </div>
-
-          <div class="cardPost">
-            <div class="post">
-              <img src="../assets/ionic.png" alt="">
-            </div>
-            <h1>Ionic Templates</h1>
-              <span>Conhecendo os templates pré-criados no ionic...</span>
-              <div class="acoes">
-                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
-                <i class="pi pi-share-alt" ></i>
-              </div>
-          </div>
-
-          <div class="cardPost">
-            <div class="post">
-              <img src="../assets/ionic.png" alt="">
-            </div>
-            <h1>Ionic Templates</h1>
-              <span>Conhecendo os templates pré-criados no ionic...</span>
-              <div class="acoes">
-                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
-                <i class="pi pi-share-alt" ></i>
-              </div>
-          </div>
-
-          <div class="cardPost">
-            <div class="post">
-              <img src="../assets/ionic.png" alt="">
-            </div>
-            <h1>Ionic Templates</h1>
-              <span>Conhecendo os templates pré-criados no ionic...</span>
-              <div class="acoes">
-                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
-                <i class="pi pi-share-alt" ></i>
-              </div>
-          </div>
-
-          <div class="cardPost">
-            <div class="post">
-              <img src="../assets/ionic.png" alt="">
-            </div>
-            <h1>Ionic Templates</h1>
-              <span>Conhecendo os templates pré-criados no ionic...</span>
-              <div class="acoes">
-                <i class="pi pi-heart-fill" [style.color]="cor" (click)="trocarCorIcone()"></i>
-                <i class="pi pi-share-alt" ></i>
-              </div>
-          </div>
-
-          
-          
-
-        </article>
-      </section>
-
-      <section class="pesquisaPostagens">
-        <div class="postsRecentes">
-      
+        <div class="pesquisarPost">
+          <p-button (onClick)="novoPost()">Nova postagem</p-button>
         </div>
-      </section>
-    </div>
-</div> 
+
+      </div>
+
+
+
+      <div class="card" *ngIf="exibirCriandoPost">
+        <div class="inputCard">
+          <label style="font-size: large; font-weight: 600;">Título:</label>
+          <input type="text" pInputTex [(ngModel)]="novaPostagem.titulo">
+        </div>
+        <div class="inputCard">
+          <label style="font-size: large; font-weight: 600;">Descrição:</label>
+          <input type="text" pInputTex [(ngModel)]="novaPostagem.subTitulo">
+        </div>
+        <div class="inputCard">
+          <label style="font-size: large; font-weight: 600;">Imagem:</label>
+          <input type="text" pInputTex [(ngModel)]="novaPostagem.image">
+        </div>
+
+        <p-editor [(ngModel)]="novaPostagem.descricao" [style]="{ height: '320px' }"></p-editor>
+
+        <p-button label="Salvar" styleClass="p-button-success" icon="pi pi-check" (onClick)="salvarPost()"></p-button>
+
+     </div>
+
+     <div [innerHTML]="text"></div>
+
+
+     <!-- POSTS -->
+      <article class="posts" [ngClass]="{'transition': !postagemSelecionada}" *ngIf="!exibirCriandoPost">
+
+        <div class="cardPost" *ngFor="let post of listaDePostagens">
+          <div class="post">
+            <img src="../../../assets/{{post.image}}"
+              alt="">
+          </div>
+          <h1>{{ post.titulo }}</h1>
+          <span>{{ post.subTitulo }}</span>
+          <div class="acoes">
+            <i class="pi pi-heart-fill"
+              [style.color]="cor"
+              (click)="trocarCorIcone()"></i>
+            <i class="pi pi-share-alt"></i>
+            <button p-button (click)="exibirPostage(post)" >Ver mais</button>
+
+          </div>
+        </div>
+      </article>
+    </section>
+
+
+
+    <section class="conteudoSelecionado" *ngIf="postagemSelecionada" [ngClass]="{'transition': postagemSelecionada}">
+      <button class="voltar" (click)="voltarPostagem()">
+        <i class="pi pi-arrow-left"
+          style="font-size: 2rem">
+        </i>
+        Voltar paras as postagens
+      </button>
+
+      <article class="postSelecionado">
+        <h1>{{ postAtual.titulo}}</h1>
+
+        <div class="imgPostSelecionado">
+          <img src="../../../assets/{{postAtual.image}}" alt="">
+        </div>
+
+        <div class="descricaoPostSelecionado">
+          <div [innerHTML]="postAtual.descricao"></div>
+        </div>
+      </article>
+
+    </section>
+
+
+    <section class="pesquisaPostagens">
+
+      <div class="postsRecentes">
+        <div class="destaques">
+          <h1>Destaques</h1>
+
+          <article>
+            <img src="../assets/ionic.png"
+              alt=""
+              srcset="">
+            <p>Título da postagem, Título da postagem, height: 200px;height: 200px;height: 200px;height: 200px;height:
+              200px;height: 200px;height: 200px200px200px200px200px200px200px200px200px200px;</p>
+          </article>
+          <article>
+            <img src="../assets/ionic.png"
+              alt=""
+              srcset="">
+            <p>Título da postagem, Título da postagem Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
+              voluptate ipsam sequi iure, dolore maiores sit praesentium totam, ipsum excepturi, aliquid recusandae
+              minus nam officiis consectetur accusantium fugiat earum quaerat?</p>
+          </article>
+          <article>
+            <img src="../assets/ionic.png"
+              alt=""
+              srcset="">
+            <p>Título da postagem, Título da postagem</p>
+          </article>
+          <article>
+            <img src="../assets/ionic.png"
+              alt=""
+              srcset="">
+            <p>Título da postagem, Título da postagem</p>
+          </article>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</div>

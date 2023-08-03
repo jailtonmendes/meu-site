@@ -6,6 +6,7 @@ import { BlogRoutingModule } from "./blog-routing.modules";
 import { MenuModule } from "../menu/menu.module";
 import { FormsModule } from "@angular/forms";
 import { PhotoService } from "src/app/services/photoservice";
+import { EditorModule } from 'primeng/editor';
 
 @NgModule({
   declarations: [BlogComponent],
@@ -16,7 +17,8 @@ import { PhotoService } from "src/app/services/photoservice";
     SharedPrimeNgModule,
     BlogRoutingModule,
     MenuModule,
-    FormsModule
+    FormsModule,
+    EditorModule
   ]
 })
 export class BlogModule {}

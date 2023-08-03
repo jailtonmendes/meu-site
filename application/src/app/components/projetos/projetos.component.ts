@@ -33,7 +33,7 @@ export class ProjetosComponent {
 
   constructor(private router: Router) {
     this.resize$.subscribe((width) => {
-      console.log(width)
+      // console.log(width)
       this.updateModalWidth(width);
     });
 
@@ -42,7 +42,7 @@ export class ProjetosComponent {
 
 
   abrirModal(projeto: ProjetosModel) {
-    console.log('projeto: ', projeto)
+    // console.log('projeto: ', projeto)
     this.visible = !this.visible;
     this.titulo = projeto.titulo
     this.descricaoProjeto = projeto.descricao
@@ -51,9 +51,47 @@ export class ProjetosComponent {
     this.link = projeto.link
   }
 
+  // reactCloneSpotify.png
 
   listaProjetosPrincipais() {
     this.listaProjetosHome = [
+      {
+        id: 1,
+        titulo: 'App GLPI',
+        descricao: 'Desenvolvi este aplicativo utilizando a tecnologia Flutter, integrando de maneira eficaz com a API do GLPI. Este projeto se concentrou na simplificação do processo de abertura de chamados, trazendo praticidade e agilidade para os usuários. ',
+        img: '../assets/glpi.png',
+        link: 'https://github.com/jailtonmendes/flutter-app-glpi',
+        nomeBotao: 'Ver código',
+        tags: ['Flutter', 'Dart', 'LottieFiles']
+      },
+      {
+        id: 1,
+        titulo: 'App calular IMC',
+        descricao: 'O objetivo do app é receber dois valores - peso e altura - e informar o Índice de Massa Corporal (IMC) correspondente. É uma ferramenta simples e útil para ajudar as pessoas a monitorarem seu peso e terem uma noção sobre seu estado de saúde em relação à sua massa corporal..',
+        img: '../assets/imc.png',
+        link: 'https://github.com/jailtonmendes/flutter-calculo-imc',
+        nomeBotao: 'Ver código',
+        tags: ['Flutter', 'Dart']
+      },
+
+      {
+        id: 1,
+        titulo: 'Previsão do tempo',
+        descricao: 'Sistema dedenvolvido em Angular com a biblioteca PrimeNg, consumindo a API externa e exibindo informações do tempo.',
+        img: '../assets/previsao_tempo.png',
+        link: 'https://github.com/jailtonmendes/angular-weather-app',
+        nomeBotao: 'Ver código',
+        tags: ['Angular', 'PrimeNg', 'TypeScript']
+      },
+      {
+        id: 1,
+        titulo: 'Spotify Clone',
+        descricao: 'Layout construido com React, NextJs e Tailwind.',
+        img: '../assets/reactCloneSpotify.png',
+        link: 'https://github.com/jailtonmendes/react-spotify-clone',
+        nomeBotao: 'Ver código',
+        tags: ['React', 'NextJs', 'Tailwind']
+      },
       {
         id: 1,
         titulo: 'App tarefas',
@@ -71,6 +109,15 @@ export class ProjetosComponent {
         link: 'https://jailtonmendes.dev.br/files-portfolio/projetos/particles/',
         nomeBotao: 'Demonstração',
         tags: ['HTML', 'CSS', 'JavaScript', 'Particle-JS']
+      },
+      {
+        id: 1,
+        titulo: 'Landing page',
+        descricao: 'Landpage baseada no jogo mario bros.',
+        img: '../assets/marioBros.png',
+        link: 'https://jailtonmendes.dev.br/files-portfolio/projetos/landpage-mario-bros/',
+        nomeBotao: 'Demonstração',
+        tags: ['HTML', 'CSS']
       },
       {
         id: 1,
@@ -112,14 +159,18 @@ export class ProjetosComponent {
     this.modalWidth = width < 768 ? '100vw' : '50vw';
   }
 
-
-
   showDialog() {
     this.visible = true;
+  }
+
+  onModalClose(fechouModal: boolean) {
+    this.visible = false;
+    // Realizar ação desejada após o fechamento do modal
   }
 
   voltar() {
     this.router.navigate(['/']);
   }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-modal',
@@ -9,6 +9,7 @@ export class ModalComponent {
 
   @Input() header!: string;
   @Input() visible!: boolean;
+  @Output() modalClose = new EventEmitter<boolean>();
   @Input() titulo!: string;
   @Input() style!: string;
   @Input() descricaoProjeto!: string;
@@ -19,13 +20,11 @@ export class ModalComponent {
   @Input() tags!: string[];
 
   constructor() {
-    // console.log('titulo', this.titulo)
     // this.titulo = 'TITULOO'
   }
 
   fecharModal() {
     // Emitir evento de fechamento do modal
-    console.log('fechei!')
-    console.log('tags: ', this.tags)
+    this.modalClose.emit(true);
   }
 }
